@@ -29,7 +29,9 @@ for (let i = items.length - 1; i >= 0; i--) {
 // ❌ swallowed error — empty catch block
 try {
   JSON.parse("{ bad json }");
-} catch (e) {}
+} catch (e) {
+  console.error("Failed to parse JSON:", e);
+}
 
 // ❌ == null instead of === null, ❌ no-else-return violation
 function greet(name) {
