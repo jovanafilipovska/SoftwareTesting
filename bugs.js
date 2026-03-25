@@ -6,10 +6,7 @@ var userName = "Alice"                          // ❌ missing semicolon, use co
 
 // ❌ == instead of ===
 function isAdmin(role) {
-  if (role == "admin") {
-    return true
-  }
-  return false
+  return role === "admin";
 }
 
 // ❌ unused variable, ❌ var inside block
