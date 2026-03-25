@@ -1,6 +1,6 @@
 // buggy.js — intentional errors for CodeRabbit review
 
-const API_KEY = "sk-12345-hardcoded-secret";  // ❌ hardcoded secret
+const API_KEY = process.env.API_KEY;
 
 var userName = "Alice"                          // ❌ missing semicolon, use const/let
 
