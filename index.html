@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello CodeRabbit</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --accent: #ff6b35;
+      --text: #f0ede8;
+      --muted: #555;
+      --border: #2a2a2a;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 3rem 2.5rem;
+      max-width: 520px;
+      width: 100%;
+      position: relative;
+      animation: fadein 0.6s ease both;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 60px; height: 3px;
+      background: var(--accent);
+      border-radius: 0 0 2px 0;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 0.82rem;
+      color: #999;
+      line-height: 1.8;
+      margin-bottom: 1.6rem;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.6rem 0;
+    }
+
+    .meta {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .meta-item span:first-child {
+      display: block;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .meta-item span:last-child {
+      font-size: 0.78rem;
+      color: var(--text);
+    }
+
+    /* intentional bug for CodeRabbit to catch */
+    .bug-demo {
+      margin-top: 1.6rem;
+      padding: 0.9rem 1rem;
+      background: #1c1c1c;
+      border-left: 3px solid var(--accent);
+      font-size: 0.72rem;
+      color: #aaa;
+      line-height: 1.7;
+    }
+
+    .bug-demo code {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <p class="label">CodeRabbit · Test Repo</p>
+    <h1>Hello,<br>CodeRabbit 🐇</h1>
+    <p>
+      This is a minimal HTML file pushed to GitHub to explore how
+      CodeRabbit reviews code. It intentionally keeps things simple
+      so the review focuses on structure and best practices.
+    </p>
+
+    <hr class="divider" />
+
+    <div class="meta">
+      <div class="meta-item">
+        <span>Status</span>
+        <span>Ready for review</span>
+      </div>
+      <div class="meta-item">
+        <span>Version</span>
+        <span>1.0.0</span>
+      </div>
+    </div>
+
+    <!-- Intentional issue: inline onclick handler — CodeRabbit should flag this -->
+    <div class="bug-demo">
+      ⚠ Intentional lint bait:<br>
+      <code>&lt;button onclick="alert('hi')"&gt;</code> — inline event handler,
+      missing <code>alt</code> on images, no <code>lang</code> fallback font.
+      Let's see what CodeRabbit catches.
+    </div>
+
+    <button onclick="alert('CodeRabbit will flag this inline handler!')"
+            style="margin-top:1.4rem; padding:0.6rem 1.2rem; background:var(--accent);
+                   border:none; color:#fff; font-family:inherit; font-size:0.78rem;
+                   cursor:pointer; border-radius:3px; letter-spacing:0.05em;">
+      Trigger Inline Handler
+    </button>
+
+  </div>
+
+</body>
+</html>
